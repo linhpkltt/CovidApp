@@ -18,7 +18,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="i65-yH-amW">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i65-yH-amW">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0n-3C-clx" userLabel="Content View">
@@ -103,20 +103,20 @@
                                                             <constraint firstAttribute="height" constant="76" id="2eg-L2-IHQ"/>
                                                         </constraints>
                                                     </stackView>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-Fp-fI4" userLabel="Call SendSMS Stack View">
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="KXp-Fp-fI4" userLabel="Call SendSMS Stack View">
                                                         <rect key="frame" x="24" y="268" width="366" height="48"/>
                                                         <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icX-2f-iC2" userLabel="Call Button">
-                                                                <rect key="frame" x="0.0" y="0.0" width="179" height="48"/>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icX-2f-iC2" userLabel="Call Button">
+                                                                <rect key="frame" x="0.0" y="0.0" width="155" height="48"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="48" id="Wlf-Xy-rhy"/>
                                                                 </constraints>
-                                                                <state key="normal" backgroundImage="Call"/>
+                                                                <state key="normal" image="Call"/>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lpa-mu-9qo" userLabel="SendSMS Button">
-                                                                <rect key="frame" x="187" y="0.0" width="179" height="48"/>
+                                                                <rect key="frame" x="211" y="0.0" width="155" height="48"/>
                                                                 <constraints>
-                                                                    <constraint firstAttribute="height" constant="48" id="lhd-AU-s4i"/>
+                                                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="kTb-aA-Mv9"/>
                                                                 </constraints>
                                                                 <state key="normal" image="SendSMS"/>
                                                             </button>
@@ -304,6 +304,7 @@
                                     <constraint firstItem="K0n-3C-clx" firstAttribute="width" secondItem="i65-yH-amW" secondAttribute="width" id="Ijf-gc-9TI"/>
                                     <constraint firstItem="K0n-3C-clx" firstAttribute="top" secondItem="i65-yH-amW" secondAttribute="top" id="NZG-Iq-7Dj"/>
                                     <constraint firstAttribute="trailing" secondItem="K0n-3C-clx" secondAttribute="trailing" id="plZ-rk-kQa"/>
+                                    <constraint firstAttribute="bottom" secondItem="K0n-3C-clx" secondAttribute="bottom" id="tKq-N3-CIe"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
