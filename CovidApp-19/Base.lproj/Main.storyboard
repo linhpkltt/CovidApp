@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="otA-Pf-Ehk">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
@@ -10,10 +10,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Root View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="CovidApp_19" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" userLabel="Root View Controller" customClass="ViewController" customModule="CovidApp_19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleAspectFit" id="8bC-Xf-vdC" userLabel="SuperView">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -119,6 +119,9 @@
                                                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="155" id="kTb-aA-Mv9"/>
                                                                 </constraints>
                                                                 <state key="normal" image="SendSMS"/>
+                                                                <connections>
+                                                                    <action selector="SendSMS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="v7m-Bd-roP"/>
+                                                                </connections>
                                                             </button>
                                                         </subviews>
                                                         <color key="backgroundColor" systemColor="systemIndigoColor"/>
@@ -314,6 +317,7 @@
                             <constraint firstItem="i65-yH-amW" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="iOw-dB-KRk"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="X7e-8J-5Hd"/>
                     <size key="freeformSize" width="414" height="852"/>
                     <connections>
                         <outlet property="RoundedCornerIconHome" destination="bLh-ZO-9ZY" id="WXU-bs-FJ6"/>
@@ -322,7 +326,66 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-175.23364485981307" y="25.917926565874733"/>
+            <point key="canvasLocation" x="731.8840579710145" y="25.271739130434785"/>
+        </scene>
+        <!--SendSMS View Controller-->
+        <scene sceneID="a64-KV-Rho">
+            <objects>
+                <viewController storyboardIdentifier="SendSMS" id="wQk-fl-678" customClass="SendSMSViewController" customModule="CovidApp_19" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Uf7-B7-3or">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Tell them your staus now!" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jaY-tw-8NE">
+                                <rect key="frame" x="25" y="100" width="365" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="XsO-Ub-Yvq"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rs3-Rt-jiO">
+                                <rect key="frame" x="100" y="277" width="214" height="30"/>
+                                <color key="backgroundColor" red="0.58755386773773521" green="0.60311062887515243" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Send">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="FLG-C9-sqJ"/>
+                        <color key="backgroundColor" systemColor="systemTealColor"/>
+                        <constraints>
+                            <constraint firstItem="jaY-tw-8NE" firstAttribute="leading" secondItem="FLG-C9-sqJ" secondAttribute="leading" constant="25" id="IGw-SR-pGN"/>
+                            <constraint firstItem="FLG-C9-sqJ" firstAttribute="trailing" secondItem="rs3-Rt-jiO" secondAttribute="trailing" constant="100" id="ULB-6K-Uht"/>
+                            <constraint firstItem="rs3-Rt-jiO" firstAttribute="leading" secondItem="FLG-C9-sqJ" secondAttribute="leading" constant="100" id="gcE-kH-csh"/>
+                            <constraint firstItem="FLG-C9-sqJ" firstAttribute="trailing" secondItem="jaY-tw-8NE" secondAttribute="trailing" constant="24" id="i79-rj-KJ7"/>
+                            <constraint firstItem="rs3-Rt-jiO" firstAttribute="top" secondItem="jaY-tw-8NE" secondAttribute="bottom" constant="27" id="qdW-jo-Do9"/>
+                            <constraint firstItem="jaY-tw-8NE" firstAttribute="top" secondItem="FLG-C9-sqJ" secondAttribute="top" constant="100" id="xEh-mQ-Ny1"/>
+                        </constraints>
+                    </view>
+                    <size key="freeformSize" width="414" height="852"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lFt-r2-wpJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1510.144927536232" y="24.456521739130437"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="Q7l-X2-PJ5">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="otA-Pf-Ehk" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="NB6-vU-PDt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Hz2-Yb-qCn"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NX7-F0-GjR" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-175.36231884057972" y="25.271739130434785"/>
         </scene>
     </scenes>
     <resources>
@@ -344,6 +407,9 @@
         </systemColor>
         <systemColor name="systemIndigoColor">
             <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemTealColor">
+            <color red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
