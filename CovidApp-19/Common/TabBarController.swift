@@ -7,23 +7,28 @@
 
 import UIKit
 
-class TabBarController: UITabBarController {
 
+class TabBarController: UITabBarController {
+    private var newViewController: NewViewController!
+    private var homeViewController: HomeViewController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        newViewController = NewViewController(nibName: "NewViewController", bundle: nil)
+        newViewController.tabBarItem.image = UIImage(named: "news")
+        newViewController.tabBarItem.title = "News"
+        
+        homeViewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        homeViewController.tabBarItem.image = UIImage(named: "ic_round-home")
+        homeViewController.tabBarItem.title = "Home"
+        
+        UITabBar.appearance().barTintColor = UIColor.lightGray
+        
+        self.viewControllers = [newViewController, homeViewController]
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
